@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Javascript Program</title>  
+<script type = "text/javascript">
+ document.write( "<h1 style=\"background-color:red;\"> no doubt in my mind where yyou belong</h1>" );  
+function f()
+{
+var d= new Date()
+
+document.getElementsByTagName("P")[0].innerHTML=d.getHours();
+}
+function fruit()
+{
+
+var a=["1","2","3"];
+a.shift();
+a.unshift("0");
+a.push("4");
+a.splice(1,0,"1");
+var b=a.slice(0,3);
+var x=window.prompt("enter a number",0);
+if(confirm("are you sure"))
+{ 
+b.push(x);
+b.sort(function(a,b){ return(b-a);});
+b.reverse();
+document.getElementsByTagName("P")[1].innerHTML=b;
+}
+}
+</script>
+ </head>
+
+<body>
+<button name="ok" onclick="f();fruit()">click </button> 
+</br>
+<p> </p>
+<p> </p>
+</body>
+ </html>

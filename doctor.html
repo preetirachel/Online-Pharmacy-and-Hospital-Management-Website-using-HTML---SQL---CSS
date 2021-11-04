@@ -1,0 +1,219 @@
+<html>
+<head>
+	<title> VIT Hospital </title>
+	
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+ <style>
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+</head>
+<body>
+	
+	<div class="top">
+		<div>
+		 Contact Us +91 96366 20000 / 01 | VIT@hospital.com 
+		</div>
+	</div>
+	
+	<div class="logo">
+		<div>
+			<table>
+				<tr>
+					<td width="600px" style="font-size:50px;font-family:forte;"> <font color="#428bca"> VIT  </font><font color="#000"> Hospital</font> </td>
+					<td> <br> <br>
+						<font size="4px"> 
+							<a href="index.html">HOME</a> 
+							<a href="about.html">ABOUT US</a>  
+							<a href="service.html">SERVICE</a>
+							<a href="doctor.html">PHARMACY</a> 
+							<a href="contact.html">CONTACT US</a>
+						</font>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="bottom">
+		<div>
+			<table border="0">
+				<tr>
+					<td width="700px">
+						<font color="#000">  </font> <br> <br>
+
+					<font color="#000" size="6px">  
+
+
+
+
+<div class="bottom">
+<div>
+<table border="0">
+<tr>
+<td width="700px">
+
+<h1 >ONLINE PHARMACY </h1>
+  
+              <p>WE DELIVER MEDICINES TO YOUR DOORSTEP! </p>
+              </div>
+            </div>
+ 
+
+      
+
+<div class="mi">
+<div style="background-image:url('img/n.jpg');">
+<p>
+<br> <br>
+  <br>
+<font size="5px">  </font>
+</p>
+</div>
+</div>
+
+<div class="bottom">
+<div>
+<table border="0">
+<tr>
+<td width="700px">
+
+
+<td> </td>
+</tr>
+
+
+</table>
+</div>
+</div>
+
+
+<div class="m" >
+<div style="background-image:url('img/b.png');">
+<p>
+<br> <br>
+  <br>
+<font size="5px">  </font>
+</p>
+</div>
+</div>
+
+
+
+
+
+     
+<div class="bottom_up">
+<div>
+<h1>
+<font color="#000" size="5px">
+ENTER PRESCRIPTION 
+</h1> </font>
+
+<table class="table.center">
+
+<tr >
+<td width="500px"> </td>
+<td>	<input type="text" placeholder="Doctor ID" name="med">
+<td> 	<input type="text" placeholder="Patient Name" name="pay">
+</tr>
+<tr height="30px">
+
+</tr>
+<tr>
+<td width="500px"> </td>
+<td>	<input type="text" placeholder="PATIENT AGE" name="emailid">
+<td> 	<input type="text" placeholder="PATIENT PHONE NO:" name="mob">
+</tr>
+
+</tr>
+<tr>
+<td width="500px"> </td>
+<td>	<input type="text" placeholder="PRIOR VISITS" name="emailid">
+<td> 	<input type="text" placeholder="DIAGNOSIS" name="mob">
+</tr>
+
+<tr height="30px">
+
+</tr>
+<tr>
+<td width="500px"> </td>
+<td>	<select> <option> -- Sex -- </option> <option> Male </option> <option> Female </option> </select>
+<td> 	<input type="text" placeholder="MEDICINE PRESCRIBED" name="deldate">
+</tr>
+
+<tr height="30px">
+
+</tr>
+<tr>
+<td width="500px"> </td>
+<td colspan="2">	<textarea placeholder="DETAILS:" name="symptom"> </textarea>
+</tr>
+
+<tr height="30px">
+
+</tr>
+<tr>
+<td width="500px"> </td>
+<td colspan="2">	<button type='submit' value="submit"> SUBMIT </button>
+	
+</tr>
+</table>
+
+
+<?php
+    //connect to the data base
+    $host="localhost";
+    $uname="root";
+    $pass="";
+    $dbname="pharmacy";
+    // if data is submitted is added to the database
+    if(isset($_POST['submit']))
+    {
+        $med=$_POST['med'];
+        $pay=$_POST['pay'];
+        $emailid=$_POST['emailid'];
+        $mob=$_POST['mob'];
+        $deldate=$_POST['deldate'];
+        $symptoms=$_POST['symptoms'];
+        
+        $query= "INSERT INTO patient(med,pay,emailid,mob,deldate,symptoms)VALUES('$med','$pay','$emailid','$mob','$deldate','$symptoms')";
+        
+        $con=mysql_connect($host,$uname,$pass);
+        $result=mysql_select_db("$pharmacy",$con);
+        $result=mysql_query($query,$con);
+    }
+    ?>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+					
+
+<br>
+<br>
+<br>
+ 
+	
+	<div class="nav_down">
+<div>
+&copy; VIT Hospital, site designed & developed by PREETI_RACHEL
+</div>
+</div>
+
+	

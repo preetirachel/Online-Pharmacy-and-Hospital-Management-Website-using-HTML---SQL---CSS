@@ -1,0 +1,57 @@
+<html>
+  <head>
+     <title>Parking garage charges-17BCS0003</title>
+ 
+     <script type="text/javascript" >
+		var currentCustomer = 0;
+		var totalCharges = 0;
+          function calculate_Charges(hrs){
+			var charges = 2; //$2.00 minimum fee to park for up to three hours
+			if (hrs > 3)
+				charges += Math.ceil(hrs - 3) * 0.5; //The garage charges an additional $0.50 per hour for each hour or part thereof in excess of three hours.
+			if (charges > 10) //The maximum charge for any given 24-hour period is $10.00
+				charges = 10;
+			totalCharges += charges;
+			return charges;
+          }
+		  function doCalculation(){
+				var hrsParked = parseFloat(document.getElementById("hrsParked").value);
+				var charges = calculate_Charges(hrsParked);
+				document.getElementById("charges").value = charges;
+		  }
+	
+	function calculateChargesForOneCustomer() // Create a new payroll function
+	{
+		currentCustomer++;
+		var hrsParked = parseFloat(prompt("Please enter the hours parked for customer: ", ""));
+		var charges = calculate_Charges(hrsParked);
+		
+		//e. Print results.
+		document.write("<tr><td>Customer " + currentCustomer + "</td><td align='right'>" + hrsParked + "</td><td align='right'>" + charges.toString() + "</td></tr>");
+	}
+
+	function inputData() // Create a new payroll function
+	{
+		//Repeat until all Customer are added.
+		document.write("<table><th>Customer</th><th>Hours Parked</th><th>Charges</th>");
+		var addCustomer = 'Y';
+		while (addCustomer == "Y")
+		{
+			calculateChargesForOneCustomer()
+			addCustomer = prompt("Add a Customer? ", "Y");
+		}
+		document.write("<tr><td/><td/><td align='right'><b>$" + totalCharges.toString() + "</b></td></tr>");
+		document.write("</table>");
+	}
+     </script>     
+</head>
+<body onload="inputData();">
+  <h1> Welcome to the program to calculate the parking garage charges</h1>
+  <hr>
+  <p>
+  Hours parked:<input type="text" id="hrsParked"><br>
+  Charges:<input type="text" id="charges"><br>
+	</p>
+  <button onclick="doCalculation()">Capture the Charges</button>
+</body>
+</html>
